@@ -102,7 +102,7 @@ class Notepad:
                                        menu=self.__thisEditMenu)     
           
         # To create a feature of description of the notepad
-        self.__thisHelpMenu.add_command(label="About Notepad",
+        self.__thisHelpMenu.add_command(label="About...",
                                         command=self.__showAbout) 
         self.__thisMenuBar.add_cascade(label="Help",
                                        menu=self.__thisHelpMenu)
@@ -121,13 +121,15 @@ class Notepad:
         # exit()
   
     def __showAbout(self):
-        showinfo("Notepad","Mrinal Verma")
+        showinfo("About Notepad...","Version 1.0\Copyright © Goldsoft Inc.")
   
     def __openFile(self):
           
         self.__file = askopenfilename(defaultextension=".txt",
                                       filetypes=[("All Files","*.*"),
-                                        ("Text Documents","*.txt")])
+                                          ("Text Documents","*.txt"),
+                                        ("Python Code Files","*.py"),
+                        ("Python Code Files with no cosole","*.pyw")]
   
         if self.__file == "":
               
